@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gimnasio Hapkido - Emergencias</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header><h1>🥋 Gimnasio de Hapkido</h1></header>
+    <div id="layout-nav"></div>
+
+    <div class="contenido">
+        <div id="mensaje-error" class="aviso"></div>
+
+        <div class="tarjeta tarjeta-emergencia">
+            <h2>📍 Contactos de emergencia cercanos a la sede</h2>
+            <p class="sub-dato">Directorio para reaccionar rápido ante una lesión durante el entrenamiento.</p>
+            <table>
+                <thead><tr><th>Tipo</th><th>Nombre</th><th>Dirección</th><th>Teléfono</th><th>Referencia</th><th colspan="2"></th></tr></thead>
+                <tbody id="tablaContactos"></tbody>
+            </table>
+        </div>
+
+        <div class="tarjeta" id="tarjetaForm">
+            <h2 id="tituloForm">Agregar contacto de emergencia</h2>
+            <form id="formContacto">
+                <input type="hidden" id="idContacto">
+                <label>Tipo</label>
+                <select id="tipo">
+                    <option value="Hospital">Hospital</option><option value="Clinica">Clínica</option>
+                    <option value="Policia">Policía</option><option value="Bomberos">Bomberos</option>
+                    <option value="Ambulancia">Ambulancia</option><option value="Otro">Otro</option>
+                </select>
+                <label>Nombre</label>
+                <input type="text" id="nombre" required minlength="2" maxlength="150">
+                <label>Dirección</label>
+                <input type="text" id="direccion" maxlength="200">
+                <label>Teléfono</label>
+                <input type="text" id="telefono" pattern="[0-9+()\-\s]{7,20}">
+                <label>Referencia / cómo llegar</label>
+                <input type="text" id="referencia">
+                <label>Notas</label>
+                <input type="text" id="notas">
+                <button type="submit" id="btnGuardar">Guardar contacto</button>
+                <a href="#" class="btn-cancelar" id="btnCancelar" style="display:none;">Cancelar</a>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/db.js"></script>
+    <script src="js/sesion.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/validar.js"></script>
+    <script src="js/paginas/emergencias.js"></script>
+</body>
+</html>

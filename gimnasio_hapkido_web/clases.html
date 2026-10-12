@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gimnasio Hapkido - Clases y horarios</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header><h1>🥋 Gimnasio de Hapkido</h1></header>
+    <div id="layout-nav"></div>
+
+    <div class="contenido">
+        <div id="mensaje-error" class="aviso"></div>
+
+        <div class="tarjeta" id="tarjetaForm">
+            <h2 id="tituloForm">Crear clase</h2>
+            <form id="formClase">
+                <input type="hidden" id="idClase">
+
+                <label>Nombre de la clase</label>
+                <input type="text" id="nombre" required minlength="2" maxlength="100" placeholder="Ej: Hapkido Infantil">
+
+                <label>Nivel</label>
+                <select id="nivel">
+                    <option>Principiantes</option><option>Intermedio</option><option>Avanzado</option>
+                </select>
+
+                <label>Instructor</label>
+                <select id="idInstructor" required></select>
+
+                <label>Día(s)</label>
+                <input type="text" id="diaSemana" placeholder="Ej: Lunes y Miércoles" maxlength="40">
+
+                <label>Hora de inicio</label>
+                <input type="time" id="horaInicio" required>
+
+                <label>Hora de fin</label>
+                <input type="time" id="horaFin" required>
+
+                <button type="submit" id="btnGuardar">Guardar clase</button>
+                <a href="#" class="btn-cancelar" id="btnCancelar" style="display:none;">Cancelar</a>
+            </form>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Clases programadas</h2>
+            <table>
+                <thead>
+                    <tr><th>Clase</th><th>Nivel</th><th>Instructor</th><th>Horario</th><th>Alumnos</th><th colspan="3"></th></tr>
+                </thead>
+                <tbody id="tablaClases"></tbody>
+            </table>
+        </div>
+
+        <div class="tarjeta" id="tarjetaMatricula" style="display:none;">
+            <h2 id="tituloMatricula">Alumnos de la clase</h2>
+            <p class="sub-dato">Marca los alumnos que pertenecen a esta clase.</p>
+            <div class="checklist" id="checklistAlumnos"></div>
+            <button id="btnGuardarMatricula">Guardar matrícula</button>
+            <a href="#" class="btn-cancelar" id="btnCerrarMatricula">Cerrar</a>
+        </div>
+    </div>
+
+    <script src="js/db.js"></script>
+    <script src="js/sesion.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/validar.js"></script>
+    <script src="js/paginas/clases.js"></script>
+</body>
+</html>

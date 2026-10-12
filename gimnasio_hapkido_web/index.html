@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gimnasio Hapkido - Inicio</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header><h1>🥋 Gimnasio de Hapkido</h1></header>
+    <div id="layout-nav"></div>
+
+    <div class="contenido">
+        <div class="tarjeta">
+            <h2>Resumen general</h2>
+            <div class="resumen" id="resumen"></div>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Pagos vencidos</h2>
+            <table>
+                <thead><tr><th>Alumno</th><th>Venció</th><th>Monto</th></tr></thead>
+                <tbody id="tablaVencidos"></tbody>
+            </table>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Próximos eventos</h2>
+            <table>
+                <thead><tr><th>Fecha</th><th>Evento</th><th>Tipo</th><th>Horario</th></tr></thead>
+                <tbody id="tablaEventos"></tbody>
+            </table>
+            <p><a href="calendario.html">Ver calendario completo →</a></p>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Clases de hoy</h2>
+            <table>
+                <thead><tr><th>Clase</th><th>Nivel</th><th>Instructor</th><th>Horario</th></tr></thead>
+                <tbody id="tablaClasesHoy"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/db.js"></script>
+    <script src="js/sesion.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/paginas/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gimnasio Hapkido - Mensualidades</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header><h1>🥋 Gimnasio de Hapkido</h1></header>
+    <div id="layout-nav"></div>
+
+    <div class="contenido">
+        <div id="mensaje-error" class="aviso"></div>
+
+        <div class="tarjeta" id="tarjetaForm">
+            <h2 id="tituloForm">Registrar pago de mensualidad</h2>
+            <form id="formPago">
+                <input type="hidden" id="idPago">
+
+                <div id="bloqueAlumno">
+                    <label>Alumno</label>
+                    <select id="idAlumno" required></select>
+                </div>
+
+                <div id="bloqueFechas" style="display:none;">
+                    <label>Fecha de pago</label>
+                    <input type="date" id="fechaPago">
+                    <label>Fecha de vencimiento</label>
+                    <input type="date" id="fechaVencimiento">
+                </div>
+
+                <label>Monto pagado</label>
+                <input type="number" id="monto" min="1" step="1000" required>
+
+                <button type="submit" id="btnGuardar">Registrar pago</button>
+                <a href="#" class="btn-cancelar" id="btnCancelar" style="display:none;">Cancelar</a>
+            </form>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Estado de mensualidades</h2>
+            <table>
+                <thead><tr><th>Alumno</th><th>Último pago</th><th>Vence</th><th>Estado</th><th colspan="2"></th></tr></thead>
+                <tbody id="tablaEstado"></tbody>
+            </table>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Historial de pagos por alumno</h2>
+            <label>Ver historial de:</label>
+            <select id="filtroAlumnoHistorial"></select>
+            <table>
+                <thead><tr><th>Fecha de pago</th><th>Vencimiento</th><th>Monto</th><th>Comprobante</th></tr></thead>
+                <tbody id="tablaHistorial"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/db.js"></script>
+    <script src="js/sesion.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/validar.js"></script>
+    <script src="js/paginas/pagos.js"></script>
+</body>
+</html>

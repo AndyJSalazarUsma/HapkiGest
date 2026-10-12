@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gimnasio Hapkido - Iniciar sesión</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header><h1>🥋 Gimnasio de Hapkido</h1></header>
+
+    <div class="contenido contenido-login">
+        <div class="tarjeta tarjeta-login">
+            <h2>Iniciar sesión</h2>
+            <p class="sub-dato">Acceso exclusivo para instructores del gimnasio.</p>
+
+            <div id="mensaje-error" class="aviso"></div>
+
+            <form id="formLogin">
+                <label>Usuario</label>
+                <input type="text" id="usuario" required autofocus>
+
+                <label>Contraseña</label>
+                <input type="password" id="clave" required>
+
+                <button type="submit">Entrar</button>
+            </form>
+
+            <div id="recuperar" style="display:none;">
+                <p class="sub-dato">¿No puedes entrar? Puedes restablecer el usuario de ejemplo
+                    (<strong>instructor</strong> / <strong>hapkido123</strong>). No se borra ningún otro dato.</p>
+                <button type="button" class="secundario" id="btnRestablecer">Restablecer usuario de ejemplo</button>
+            </div>
+
+            <p class="sub-dato">
+                Usuario de ejemplo: <strong>instructor</strong> / clave: <strong>hapkido123</strong>
+            </p>
+        </div>
+    </div>
+
+    <script src="js/db.js"></script>
+    <script src="js/sesion.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/paginas/login.js"></script>
+</body>
+</html>

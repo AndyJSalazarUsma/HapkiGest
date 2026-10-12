@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gimnasio Hapkido - Asistencia</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header><h1>🥋 Gimnasio de Hapkido</h1></header>
+    <div id="layout-nav"></div>
+
+    <div class="contenido">
+        <div id="mensaje-error" class="aviso"></div>
+
+        <div class="tarjeta">
+            <h2>Registrar asistencia</h2>
+            <label>Clase</label>
+            <select id="idClase"></select>
+
+            <label>Fecha</label>
+            <input type="date" id="fecha">
+
+            <div id="listaAsistencia" style="margin-top:14px;"></div>
+
+            <button id="btnGuardarAsistencia" style="display:none;">Guardar asistencia</button>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Últimos registros</h2>
+            <table>
+                <thead><tr><th>Fecha</th><th>Clase</th><th>Alumno</th><th>Estado</th></tr></thead>
+                <tbody id="tablaUltimas"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/db.js"></script>
+    <script src="js/sesion.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/paginas/asistencias.js"></script>
+</body>
+</html>

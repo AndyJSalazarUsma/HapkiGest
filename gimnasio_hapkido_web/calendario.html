@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gimnasio Hapkido - Calendario</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header><h1>🥋 Gimnasio de Hapkido</h1></header>
+    <div id="layout-nav"></div>
+
+    <div class="contenido">
+        <div id="mensaje-error" class="aviso"></div>
+
+        <div class="tarjeta">
+            <div class="cal-barra">
+                <button type="button" class="secundario" id="btnMesAnterior">‹</button>
+                <h2 id="tituloMes">Mes</h2>
+                <button type="button" class="secundario" id="btnMesSiguiente">›</button>
+                <button type="button" class="secundario" id="btnHoy">Hoy</button>
+                <label class="cal-toggle">
+                    <input type="checkbox" id="chkClases"> Mostrar clases
+                </label>
+            </div>
+            <p class="sub-dato">Haz clic en un día para agregar un evento, o en un evento para editarlo.</p>
+
+            <div class="cal-semana" id="cabeceraDias"></div>
+            <div class="cal-grid" id="calendario"></div>
+
+            <div class="cal-leyenda" id="leyenda"></div>
+        </div>
+
+        <div class="tarjeta" id="tarjetaForm">
+            <h2 id="tituloForm">Agregar evento</h2>
+            <form id="formEvento">
+                <input type="hidden" id="idEvento">
+
+                <label>Título</label>
+                <input type="text" id="titulo" required maxlength="100" placeholder="Ej: Seminario de defensa personal">
+
+                <label>Tipo de evento</label>
+                <select id="tipo"></select>
+
+                <label>Fecha de inicio</label>
+                <input type="date" id="fechaInicio" required>
+
+                <label>Fecha de fin (opcional, para eventos de varios días)</label>
+                <input type="date" id="fechaFin">
+
+                <label>Hora de inicio (opcional)</label>
+                <input type="time" id="horaInicio">
+
+                <label>Hora de fin (opcional)</label>
+                <input type="time" id="horaFin">
+
+                <label>Lugar</label>
+                <input type="text" id="lugar" maxlength="120" placeholder="Ej: Sede principal">
+
+                <label>Descripción / notas</label>
+                <textarea id="descripcion" rows="3" maxlength="500"></textarea>
+
+                <button type="submit" id="btnGuardar">Guardar evento</button>
+                <button type="button" class="btn-eliminar" id="btnEliminar" style="display:none;">Eliminar evento</button>
+                <a href="#" class="btn-cancelar" id="btnCancelar" style="display:none;">Cancelar</a>
+            </form>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Próximos eventos</h2>
+            <table>
+                <thead><tr><th>Fecha</th><th>Evento</th><th>Tipo</th><th>Horario</th><th>Lugar</th><th></th></tr></thead>
+                <tbody id="tablaProximos"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/db.js"></script>
+    <script src="js/sesion.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/validar.js"></script>
+    <script src="js/paginas/calendario.js"></script>
+</body>
+</html>

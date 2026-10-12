@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gimnasio Hapkido - Ficha del alumno</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header><h1>🥋 Gimnasio de Hapkido</h1></header>
+    <div id="layout-nav"></div>
+
+    <div class="contenido">
+        <p><a href="alumnos.html">← Volver a la lista de alumnos</a></p>
+        <div id="mensaje-error" class="aviso"></div>
+
+        <div class="tarjeta">
+            <h2 id="nombreAlumno">Ficha del alumno</h2>
+            <p id="datosAlumno" class="sub-dato"></p>
+        </div>
+
+        <div class="tarjeta">
+            <h2>🥋 Historial de grados (cinturones)</h2>
+            <table>
+                <thead><tr><th>Fecha</th><th>Cinturón obtenido</th><th>Monto del examen</th></tr></thead>
+                <tbody id="tablaGrados"></tbody>
+            </table>
+        </div>
+
+        <div class="tarjeta">
+            <h2>📋 Historial de asistencia</h2>
+            <table>
+                <thead><tr><th>Fecha</th><th>Clase</th><th>Estado</th><th>Observación</th></tr></thead>
+                <tbody id="tablaAsistencia"></tbody>
+            </table>
+        </div>
+
+        <div class="tarjeta">
+            <h2>📝 Observaciones</h2>
+            <form id="formObservacion">
+                <label>Nueva observación</label>
+                <textarea id="textoObservacion" required maxlength="500" placeholder="Ej: mejoró mucho la técnica de caída, o: se recomienda reforzar disciplina..."></textarea>
+                <button type="submit">Agregar observación</button>
+            </form>
+            <ul class="lista-observaciones" id="listaObservaciones"></ul>
+        </div>
+    </div>
+
+    <script src="js/db.js"></script>
+    <script src="js/sesion.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/paginas/ficha-alumno.js"></script>
+</body>
+</html>

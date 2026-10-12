@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gimnasio Hapkido - Alumnos</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header><h1>🥋 Gimnasio de Hapkido</h1></header>
+    <div id="layout-nav"></div>
+
+    <div class="contenido">
+        <div id="mensaje-error" class="aviso"></div>
+
+        <div class="tarjeta" id="tarjetaForm">
+            <h2 id="tituloForm">Registrar alumno nuevo</h2>
+            <form id="formAlumno">
+                <input type="hidden" id="idAlumno">
+
+                <label>Nombre completo</label>
+                <input type="text" id="nombre" required minlength="2" maxlength="150"
+                       pattern="[A-Za-zÀ-ÿ .'\-]+" title="Solo letras y espacios">
+
+                <label>Teléfono</label>
+                <input type="text" id="telefono" pattern="[0-9+()\-\s]{7,20}"
+                       title="Solo números, espacios, +, - y paréntesis (7 a 20 caracteres)">
+
+                <label>Fecha de nacimiento</label>
+                <input type="date" id="fechaNacimiento">
+
+                <label>Cinturón</label>
+                <select id="cinturon">
+                    <option>Blanco</option><option>Amarillo</option><option>Naranja</option>
+                    <option>Verde</option><option>Azul</option><option>Rojo</option><option>Negro</option>
+                </select>
+
+                <label>Estado</label>
+                <select id="activo">
+                    <option value="true">Activo</option>
+                    <option value="false">Inactivo</option>
+                </select>
+
+                <div id="bloqueAcudiente" class="acudiente-oculto">
+                    <h3>Datos del acudiente <span class="badge-menor">Obligatorio: alumno menor de edad</span></h3>
+
+                    <label>Nombre del acudiente</label>
+                    <input type="text" id="acudienteNombre" pattern="[A-Za-zÀ-ÿ .'\-]+" title="Solo letras y espacios">
+
+                    <label>Teléfono del acudiente</label>
+                    <input type="text" id="acudienteTelefono" pattern="[0-9+()\-\s]{7,20}">
+
+                    <label>Parentesco</label>
+                    <select id="acudienteParentesco">
+                        <option>Padre</option><option>Madre</option><option>Abuelo/a</option>
+                        <option>Tío/a</option><option>Hermano/a mayor</option><option>Otro</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="btnGuardar">Guardar alumno</button>
+                <a href="#" class="btn-cancelar" id="btnCancelar" style="display:none;">Cancelar</a>
+            </form>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Lista de alumnos</h2>
+
+            <form class="buscador" id="formBuscar">
+                <input type="text" id="buscar" placeholder="Buscar por nombre...">
+                <select id="filtroEstado" style="max-width:160px;">
+                    <option value="todos">Todos</option>
+                    <option value="true" selected>Activos</option>
+                    <option value="false">Inactivos</option>
+                </select>
+                <button type="submit">Buscar</button>
+            </form>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th><th>Teléfono</th><th>Edad</th><th>Cinturón</th>
+                        <th>Estado</th><th colspan="3"></th>
+                    </tr>
+                </thead>
+                <tbody id="tablaAlumnos"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/db.js"></script>
+    <script src="js/sesion.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/validar.js"></script>
+    <script src="js/paginas/alumnos.js"></script>
+</body>
+</html>

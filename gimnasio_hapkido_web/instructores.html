@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gimnasio Hapkido - Instructores</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header><h1>🥋 Gimnasio de Hapkido</h1></header>
+    <div id="layout-nav"></div>
+
+    <div class="contenido">
+        <div id="mensaje-error" class="aviso"></div>
+
+        <div class="tarjeta" id="tarjetaForm">
+            <h2 id="tituloForm">Registrar instructor</h2>
+            <form id="formInstructor">
+                <input type="hidden" id="idInstructor">
+
+                <label>Nombre completo</label>
+                <input type="text" id="nombre" required minlength="2" maxlength="150">
+
+                <label>Teléfono</label>
+                <input type="text" id="telefono" pattern="[0-9+()\-\s]{7,20}">
+
+                <label>Grado (cinturón/dan)</label>
+                <input type="text" id="grado" placeholder="Ej: Cinturón Negro 3er Dan">
+
+                <label>Especialidad</label>
+                <input type="text" id="especialidad" placeholder="Ej: Hapkido tradicional, defensa personal">
+
+                <label>Usuario (para iniciar sesión)</label>
+                <input type="text" id="usuario" required minlength="3" maxlength="60">
+
+                <label id="labelClave">Contraseña</label>
+                <input type="password" id="clave" minlength="4">
+                <p class="sub-dato" id="ayudaClave"></p>
+
+                <label>Estado</label>
+                <select id="activo">
+                    <option value="true">Activo</option>
+                    <option value="false">Inactivo (no puede iniciar sesión)</option>
+                </select>
+
+                <button type="submit" id="btnGuardar">Guardar instructor</button>
+                <a href="#" class="btn-cancelar" id="btnCancelar" style="display:none;">Cancelar</a>
+            </form>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Lista de instructores</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th><th>Teléfono</th><th>Grado</th><th>Especialidad</th>
+                        <th>Clases asignadas</th><th>Estado</th><th colspan="2"></th>
+                    </tr>
+                </thead>
+                <tbody id="tablaInstructores"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/db.js"></script>
+    <script src="js/sesion.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/validar.js"></script>
+    <script src="js/paginas/instructores.js"></script>
+</body>
+</html>
